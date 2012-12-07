@@ -1,4 +1,4 @@
-fiddles
+Fiddles
 =======
 
-Just a link page for all my JS Fiddles
+* My Dashboard: http://jsfiddle.net/user/supnate/fiddles/

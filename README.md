@@ -3,4 +3,4 @@
 
 
 ##ObjectC Color Code Generator
-http://supnate.github.io/objcolor.html
+http://supnate.github.io/fiddles/objcolor.html

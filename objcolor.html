@@ -1,0 +1,60 @@
+
+<html>
+
+<head>
+
+<title>ObjectC color code convertor</title>
+
+<style type="text/css">
+.row {
+    padding: 5px;
+}
+.row input {
+    width: 90%;
+    padding: 3px;
+    color: #2175bc;
+}
+
+#result{
+    width: 90%;
+    height: 400px;
+    padding: 3px;
+    font-family:courier new,sans-serif;
+}
+
+</style>
+</head>
+
+
+<body>
+<div class="row"><input type="text" id="hexColor" placeHolder="Hex Color"/></div>
+<div class="row"><input type="text" id="rgbColor" placeHolder="RGB Color"/></div>
+
+<div class="row"><textarea id="result" placeHolder="Result"></textarea></div>
+</body>
+
+</html>
+
+
+<script>
+function $(id){
+    return document.getElementById(id);
+}
+
+$('hexColor').onkeyup = function(){
+    var hex = this.value;
+    if(hex.length != 7)return;
+    var r = hex.substring(1,3)
+       ,g = hex.substring(3,5)
+       ,b = hex.substring(5,7);
+    try{
+        var ir = eval('0x' + r)
+            ,ig = eval('0x' + g)
+            ,ib = eval('0x' + b);
+        $('rgbColor').value = ir + ', ' + ig + ', ' + ib;
+        
+        $('result').value = '[UIColor colorWithRed:'+ir+'/255.0f green:'+ig+'/255.0f blue:'+ib+'/255.0f alpha:1]';
+    }catch(e){console.error(e);}
+}
+
+</script>
